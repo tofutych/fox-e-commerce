@@ -19,6 +19,7 @@ export default createStore({
         localStorage.setItem('cart', JSON.stringify(state.cart))
       }
     },
+
     addToCart(state, item) {
       const exists = state.cart.items.filter(i => i.product.id == item.product.id)
 
@@ -29,6 +30,10 @@ export default createStore({
       }
 
       localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
+
+    setIsLoading(state, status) {
+      state.isLoading = status
     }
   },
   actions: {
