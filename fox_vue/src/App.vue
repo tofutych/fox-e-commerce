@@ -17,7 +17,7 @@
         <div class="navbar-start">
           <router-link to="/bastard" class="navbar-item">Bastard</router-link>
           <router-link to="/red" class="navbar-item">Red</router-link>
-          </div>
+        </div>
 
         <div class="navbar-end">
           <div class="navbar-item">

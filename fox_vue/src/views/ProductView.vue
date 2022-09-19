@@ -96,5 +96,7 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+  border-radius: 10px;
+}
 </style>
