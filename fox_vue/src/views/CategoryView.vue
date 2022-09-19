@@ -2,7 +2,19 @@
   <div class="page-category">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-12 has-text-centered"> {{ category.name }}</h2>
+        <h2 class="is-size-12 has-text-centered"> {{ category.name }} color</h2>
+      </div>
+
+      <div class="column is-3" v-for="product in category.products" v-bind:key="product.id">
+        <div class="box">
+          <figure class="image is-3by2">
+            <img v-bind:src="product.get_thumbnail" alt="image thumbnail">
+          </figure>
+          <h3 class="is-size-4">{{ product.name }}</h3>
+          <p class="is-size-6 has-text-grey">${{ product.price }}</p>
+
+          <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View details</router-link>
+        </div>
       </div>
     </div>
   </div>
