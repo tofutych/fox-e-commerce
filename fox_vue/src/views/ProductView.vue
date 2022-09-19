@@ -1,25 +1,25 @@
 <template>
   <section class="section">
     <div class="container">
-      <div class="columns is-vcentered is-multiline">
-        <div class="column is-6-tablet is-3-desktop">
+      <div class="columns is-vcentered is-multiline ">
+        <div class="column is-6-tablet is-3-desktop ">
           <h1 class="is-size-3-mobile is-size-1-desktop title">{{ product.name }}</h1>
           <p>{{ product.description }}</p>
         </div>
         <div class="column is-6-tablet is-5-desktop has-text-centered">
-          <img v-bind:src="product.get_image" :alt="product.name">
+          <img v-bind:src="product.get_image" :alt="product.name" class="px-auto">
         </div>
         <div class="column is-12-tablet is-4-desktop">
-          <div class="is-size-4 mb-4">${{ product.price }}</div>
+          <div class="is-size-4 mb-2 ml-6 px-4">${{ product.price }}</div>
           <form>
 
-            <div class="field has-addons mt-6">
+            <div class="field has-addons mt-2 ml-6 px-4">
               <div class="control">
-                <input type="number" class="input is-primary is-large" min="1" v-model="quantity">
+                <input type="number" class="input is-primary is-small" min="1" v-model="quantity">
               </div>
 
               <div class="control">
-                <a class="button is-primary is-large is-outlined" @click="addToCart">Add to cart</a>
+                <a class="button is-primary is-small is-outlined" @click="addToCart">Add to cart</a>
               </div>
             </div>
 
