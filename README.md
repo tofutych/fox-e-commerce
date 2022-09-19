@@ -25,7 +25,9 @@
 </td></tr>
 </table>
 
->#### Несколько скриншотов
->![screen1](./readme_resources/1.png)
->![screen2](./readme_resources/2.png)
->![screen3](./readme_resources/3.png)
+### Несколько скриншотов
+<img src="./readme_resources/home.png"/>
+<img src="./readme_resources/product.png"/>
+<img src="./readme_resources/category.png"/>
+
+
