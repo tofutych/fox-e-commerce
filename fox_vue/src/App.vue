@@ -3,7 +3,8 @@
     <nav class="navbar is-dark">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>Foxes</strong></router-link>
-        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
+        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu"
+           @click="showMobileMenu = !showMobileMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -66,7 +67,7 @@ export default {
     cartTotalLength() {
       let totalLength = 0
 
-      for (let i = 0; i < this.cart.items.length; i++){
+      for (let i = 0; i < this.cart.items.length; i++) {
         totalLength += this.cart.items[i].quantity
       }
 
@@ -84,6 +85,7 @@ export default {
   width: 80px;
   height: 80px;
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -95,6 +97,7 @@ export default {
   border-color: #cccccc transparent #cccccc transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -103,11 +106,13 @@ export default {
     transform: rotate(360deg);
   }
 }
+
 .is-loading-bar {
   height: 0;
   overflow: hidden;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+
   &.is-loading {
     height: 80px;
   }
