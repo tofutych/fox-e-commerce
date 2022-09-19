@@ -1,8 +1,10 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-dark">
+    <nav class="navbar">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>Foxes</strong></router-link>
+        <router-link to="/" class="navbar-item"><strong>Foxes</strong>
+          <img src="https://img.icons8.com/color/96/000000/fox.png"/>
+        </router-link>
         <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu"
            @click="showMobileMenu = !showMobileMenu">
           <span aria-hidden="true"></span>
@@ -12,13 +14,15 @@
       </div>
 
       <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
-        <div class="navbar-end">
+        <div class="navbar-start">
           <router-link to="/bastard" class="navbar-item">Bastard</router-link>
           <router-link to="/red" class="navbar-item">Red</router-link>
+          </div>
 
+        <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <router-link to="/cart" class="button is-success">
+              <router-link to="/cart" class="button is-warning">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
@@ -38,8 +42,10 @@
       <router-view/>
     </section>
 
-    <footer class="footer">
-      <p class="has-text-centered">Foxyright (c) 2022</p>
+    <footer class="footer has-background-white-bis">
+      <div class="content has-text-centered">
+        <p>Foxyright (c) 2022</p>
+      </div>
     </footer>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="page-category">
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-12 has-text-centered"> {{ category.name }} color</h2>
+        <h1 class="title is-1 has-text-centered"> {{ category.name }} color</h1>
       </div>
 
       <div class="column is-3" v-for="product in category.products" v-bind:key="product.id">
@@ -13,7 +13,7 @@
           <h3 class="is-size-4">{{ product.name }}</h3>
           <p class="is-size-6 has-text-grey">${{ product.price }}</p>
 
-          <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View details</router-link>
+          <router-link v-bind:to="product.get_absolute_url" class="button is-info is-light mt-4">View details</router-link>
         </div>
       </div>
     </div>

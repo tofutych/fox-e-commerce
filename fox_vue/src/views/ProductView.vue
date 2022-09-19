@@ -1,32 +1,33 @@
 <template>
-  <div class="page-product">
-    <div class="column is-multiline">
-      <div class="column is-9">
-        <figure class="image mb-6">
+  <section class="section">
+    <div class="container">
+      <div class="columns is-vcentered is-multiline">
+        <div class="column is-6-tablet is-3-desktop">
+          <h1 class="is-size-3-mobile is-size-1-desktop title">{{ product.name }}</h1>
+          <p>{{ product.description }}</p>
+        </div>
+        <div class="column is-6-tablet is-5-desktop has-text-centered">
           <img v-bind:src="product.get_image" :alt="product.name">
-        </figure>
+        </div>
+        <div class="column is-12-tablet is-4-desktop">
+          <div class="is-size-4 mb-4">${{ product.price }}</div>
+          <form>
 
-        <h1 class="title">{{ product.name }}</h1>
-        <p class="has-background-link-light">{{ product.description }}</p>
-      </div>
+            <div class="field has-addons mt-6">
+              <div class="control">
+                <input type="number" class="input is-primary is-large" min="1" v-model="quantity">
+              </div>
 
-      <div class="column is-3">
-        <h2 class="subtitle">Information</h2>
+              <div class="control">
+                <a class="button is-primary is-large is-outlined" @click="addToCart">Add to cart</a>
+              </div>
+            </div>
 
-        <p class="has-background-primary-light"><strong>Price: </strong>${{ product.price }}</p>
-
-        <div class="field has-addons mt-6">
-          <div class="control">
-            <input type="number" class="input" min="1" v-model="quantity">
-          </div>
-
-          <div class="control">
-            <a class="button is-dark" @click="addToCart">Add to cart</a>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
