@@ -82,16 +82,17 @@ export default {
 
 .lds-dual-ring {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  opacity: 69%;
+  width: 40px;
+  height: 40px;
 }
 
 .lds-dual-ring:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  width: 32px;
+  height: 32px;
+  margin: 4px;
   border-radius: 50%;
   border: 6px solid #ccc;
   border-color: #cccccc transparent #cccccc transparent;
@@ -114,7 +115,7 @@ export default {
   transition: all 0.3s;
 
   &.is-loading {
-    height: 80px;
+    height: 40px;
   }
 }
 </style>
