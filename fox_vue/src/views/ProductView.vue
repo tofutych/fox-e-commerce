@@ -7,13 +7,13 @@
         </figure>
 
         <h1 class="title">{{ product.name }}</h1>
-        <p>{{ product.description }}</p>
+        <p class="has-background-link-light">{{ product.description }}</p>
       </div>
 
       <div class="column is-3">
         <h2 class="subtitle">Information</h2>
 
-        <p><strong>Price</strong>${{ product.price }}</p>
+        <p class="has-background-primary-light"><strong>Price: </strong>${{ product.price }}</p>
 
         <div class="field has-addons mt-6">
           <div class="control">
