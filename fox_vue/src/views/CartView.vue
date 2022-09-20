@@ -22,12 +22,23 @@
               v-for="item in cart.items"
               v-bind:key="item.product.id"
               v-bind:initialItem="item"
+              v-on:removeFromCart="removeFromCart"
           >
           </CartItem>
           </tbody>
         </table>
 
         <p v-else>You dont have any products in your cart</p>
+      </div>
+
+      <div class="column is12 box">
+        <h2 class="subtitle">Summary</h2>
+
+                <strong class="has-text-success">${{ cartTotalPrice.toFixed(2) }}</strong>, {{ cartTotalLength}} items
+
+        <hr>
+
+        <router-link to="/cart/checkout" class="button is-warning">Proceed to checkout</router-link>
       </div>
     </div>
   </div>
@@ -42,6 +53,7 @@ export default {
   components: {
     CartItem
   },
+
   data() {
     return {
       cart: {
@@ -49,18 +61,27 @@ export default {
       }
     }
   },
+
   mounted() {
     this.cart = this.$store.state.cart
   },
+
   methods: {
     removeFromCart(item) {
       this.cart.items = this.cart.items.filter(i => i.product.id !== item.product.id)
     }
   },
+
   computed: {
     cartTotalLength() {
       return this.cart.items.reduce((acc, curVal) => {
         return acc += curVal.quantity
+      }, 0)
+    },
+
+    cartTotalPrice() {
+      return this.cart.items.reduce((acc, curVal) => {
+        return acc += curVal.product.price * curVal.quantity
       }, 0)
     },
   }
