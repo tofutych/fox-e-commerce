@@ -1,6 +1,6 @@
 <template>
   <div class="page-search">
-    <div class="colums is-multiline">
+    <div class="columns is-multiline">
       <div class="column is-12">
         <h1 class="title">Search</h1>
 
