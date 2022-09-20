@@ -21,7 +21,8 @@ import axios from "axios";
 import ProductBox from "@/components/ProductBox";
 
 export default {
-  name: "Search",
+  name: "SearchView",
+
 
   components: {
     ProductBox

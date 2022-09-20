@@ -22,7 +22,7 @@ import {toast} from "bulma-toast";
 import ProductBox from "@/components/ProductBox";
 
 export default {
-  name: 'Category',
+  name: 'CategoryView',
   components: {
     ProductBox
   },
