@@ -30,5 +30,6 @@
 <img src="./readme_resources/product.png"/>
 <img src="./readme_resources/category.png"/>
 <img src="./readme_resources/search.png"/>
+<img src="./readme_resources/cart.png"/>
 
 
