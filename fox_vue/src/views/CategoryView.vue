@@ -5,17 +5,12 @@
         <h1 class="title is-1 has-text-centered"> {{ category.name }} color</h1>
       </div>
 
-      <div class="column is-3" v-for="product in category.products" v-bind:key="product.id">
-        <div class="box">
-          <figure class="image is-3by2">
-            <img v-bind:src="product.get_thumbnail" alt="image thumbnail">
-          </figure>
-          <h3 class="is-size-4">{{ product.name }}</h3>
-          <p class="is-size-6 has-text-grey">${{ product.price }}</p>
-
-          <router-link v-bind:to="product.get_absolute_url" class="button is-info is-light mt-4">View details</router-link>
-        </div>
-      </div>
+      <ProductBox
+          v-for="product in category.products"
+          v-bind:key="product.id"
+          v-bind:product="product"
+      >
+      </ProductBox>
     </div>
   </div>
 </template>
@@ -24,9 +19,13 @@
 <script>
 import axios from "axios";
 import {toast} from "bulma-toast";
+import ProductBox from "@/components/ProductBox";
 
 export default {
   name: 'Category',
+  components: {
+    ProductBox
+  },
   data() {
     return {
       category: {
@@ -54,16 +53,16 @@ export default {
             console.log(error)
 
             toast({
-                message: 'Something went wrong! Please try again',
-                type: 'is-danger',
-                dismissible: false,
-                pauseOnHover: true,
-                duration: 2000,
-                position: 'bottom-right',
-                animate: {
-                  in: 'fadeIn',
-                  out: 'fadeOut'
-                }
+              message: 'Something went wrong! Please try again',
+              type: 'is-danger',
+              dismissible: false,
+              pauseOnHover: true,
+              duration: 2000,
+              position: 'bottom-right',
+              animate: {
+                in: 'fadeIn',
+                out: 'fadeOut'
+              }
             })
           })
 
