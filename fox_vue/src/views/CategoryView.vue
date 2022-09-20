@@ -33,9 +33,15 @@ export default {
       }
     }
   },
+
   mounted() {
     this.getCategory()
   },
+
+  watch() {
+
+  },
+
   methods: {
     async getCategory() {
       const category_slug = this.$route.params.category_slug
@@ -72,12 +78,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.image {
-  margin-top: -1.25rem;
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
-}
-
-</style>
