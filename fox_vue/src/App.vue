@@ -2,7 +2,7 @@
   <div id="wrapper">
     <nav class="navbar">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>Foxes</strong>
+        <router-link to="/" class="navbar-item"><strong>Foxxx</strong>
           <img src="https://img.icons8.com/color/96/000000/fox.png"/>
         </router-link>
         <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu"
@@ -15,8 +15,26 @@
 
       <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
         <div class="navbar-start">
+
           <router-link to="/bastard" class="navbar-item">Bastard</router-link>
           <router-link to="/red" class="navbar-item">Red</router-link>
+          <div class="navbar-item">
+            <form method="get" action="/search">
+              <div class="field has-addons">
+                <div class="control">
+                  <input type="text" class="input is-warning" placeholder="Search here..." name="query">
+                </div>
+
+                <div class="control">
+                  <button class="button is-warning">
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div class="navbar-end">
